@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    body {
+                 background-color: rgb(89, 156, 245);
+    }
+  
+          .login {
+           margin: auto;
+           
+           width: 400px;
+           height: 400px;
+      }
+  
+           button {
+            position: relative;
+              color : rgb(255, 255, 255);
+              background-color: rgb(250, 178, 24);
+              font-size: 18px;
+              width: 320px;
+              
+              padding: 10px 10px;
+              border-radius: 15px;
+              border: none;
+              font-family: Verdana, Geneva, Tahoma, sans-serif;
+              font-weight: bold;
+              transition: 200ms;
+              margin-top: -20px;
+  
+      }
+      button:hover {
+        outline: none;
+          transform: scale(1.1);
+          background-color: rgb(250, 178, 24);
+          
+          cursor: pointer;
+      }
+      h1 {
+          color: white;
+          font-size: 6vh;
+          font-family:Georgia, 'Times New Roman', Times, serif;
+          
+      }
+      input{
+         border: none;
+         border-radius: 14px;
+          width: 75%;
+          height: 5%;
+          padding: 15px 10px;
+          font-size: 18px;
+          margin-top: 20px;
+
+      }
+      h3 {color:red;
+          font-size: 30px;
+          margin-top: 90px;
+      }
+      .answer{
+        font-size: 3vh;
+        margin: 10px;
+        border: none;
+        padding: 10px -0px;
+ 
+        width: 320px;
+        color: white;
+        border-radius: 20px;
+        margin-left: 40px;
+      }
+  </style>
+  
+  <body>
+    <center><h1> DIMOND PRICE PREDICTION </h1></center>
+      <div class="login">
+      
+  
+      <form method="post" action="{{ url_for('predict') }}">
+      <br><br>
+      <center>
+        <input type="text" name="carat" placeholder="cut"  required/>
+      <input type="text" name="cut" placeholder="cut"  required/>
+      <input type="text" name="color" placeholder="color"  required/>
+      <input type="text" name="clarity" placeholder="clarity"  required/>
+      <input type="text" name="depth" placeholder="depth" required />
+      <input type="text" name="table" placeholder="table" required />
+      <input type="text" name="x" placeholder="x" required />
+      <input type="text" name="y" placeholder="y" required />
+      <input type="text" name="z" placeholder="z" required />
+      
+    
+    </center>
+      <br><br><br>
+  
+  
+  
+      <center><button type="submit"> Price Prediction </button></center>
+  </form>
+  
+<div class="answer"><center><span  >  {{ prediction_text }}</span></center></div>
+  
+
+</body>
+</html> 
